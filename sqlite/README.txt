@@ -6,10 +6,10 @@ project path
 
 Follow all this command 
 
-$ cd /mytestsqlite
+$ /SMILE_STAGE/SOURCES_GIT/TEST_HOST/
 $ git clone https://github.com/Costa83/db_test_ubuntu.git
 
-$ git clone https://github.com/Costa83/libsqlite3.git
+$ git clone https://github.com/LuaDist/libsqlite3.git
 $ cd libsqlite3
 $ ./configure
 $ make
