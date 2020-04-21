@@ -1,4 +1,4 @@
-INSTALL UBUNTU SQLITE TEST :
+﻿INSTALL UBUNTU SQLITE TEST :
 -----------------------------
 
 First on Ubuntu, connect to github and git clone this repository in your
@@ -6,8 +6,10 @@ project path
 
 Follow all this command 
 
-$ /SMILE_STAGE/SOURCES_GIT/TEST_HOST/
+$ cd /SMILE_STAGE/SOURCES_GIT/TEST_HOST/
 $ git clone https://github.com/Costa83/db_test_ubuntu.git
+
+$ cd test_host/sqlite/
 
 $ git clone https://github.com/LuaDist/libsqlite3.git
 $ cd libsqlite3
@@ -34,7 +36,7 @@ $ sudo cp /usr/local/lib/libsqlite3.so.0.8.6 /usr/lib/x86_64-linux-gnu/libsqlite
 To use sqlite with the terminal (command shell) in ubuntu :
 
 
-$ sqlite3
+$ sqlite
 sqlite> .database
 sqlite> .tables
 sqlite> select * from STT;
