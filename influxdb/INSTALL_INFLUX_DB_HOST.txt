@@ -1,11 +1,13 @@
 ﻿INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
 
-On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
 
+On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
 
 Outils : GRAFANA, InfluxDB
 
-## ETAPE 0 : Installer GRAFANA :
+
+###############################################################################
+## ETAPE 1: Installer GRAFANA :
 
 Grafana is by far one of the most popular open source dashboard monitoring tools of 2019. 
 Used by SpaceX, Bloomberg and Booking.com, Grafana is definitely a must-have for engineers wanting a robust and scalable dashboard monitoring solution.
@@ -49,42 +51,40 @@ https://www.sugarbug.fr/atelier/maquettes/centreon_graphite_graphana/grafana/
 
 
 
-Depuis le site officiel paquet, un paquet Debian est à installer,
-
-
-Configuration de Grafana avec le fichier /etc/grafana/grafana.ini
-
-Connecion à localhost:3000
-	id:admin
-	mdp:admin
-
-
-Démarrer influxdb :
-
-$ service grafana-server start
-
-Se connecter ensuite sur son navigateur à l’adresse localhost:8086
-
-$ service start grafana
-
-$ service influxdb start
-
-$ influx
-> show database
-> drop database my_database
->use mydb
->select value from stt
->select * from stt
 
 
 
-## ETAPE 1: Installer InfluxDB:
 
-Installer depuis le paquet debian offciel :
+###############################################################################
+
+## ETAPE 2: Installer InfluxDB: Install InfluxDB on Ubuntu 18.04
+
+Source : https://computingforgeeks.com/install-influxdb-on-ubuntu-18-04-and-debian-9/
+
+Installation of InfluxDB on Ubuntu 18.04 is done from Influxdata repository. Once the repo is added, the package can then be installed using an apt package manager. Add the InfluxData repository to the file  /etc/apt/sources.list.d/influxdb.list : 
+
+$ echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 
 
-Installation sur le PC hote du paquet pyhton : python-influxdb
+Update apt index and install influxdb 
+
+$ sudo apt-get install -y influxdb
+$ sudo apt-get install influxdb-client
+Start and enable the service to start on boot up : 
+
+$ sudo systemctl enable --now influxdb
+$ sudo systemctl is-enabled influxdb
+Check service status:
+$ systemctl status influxdb
+
+Open a terminal and check if influxdb is installed :
+
+$ influxdb
 
 
-En python la db est localisé dans /var/lib/influxdb
+###############################################################################
+
+## ETAPE 3: Installer pyhton-influxdb
+
+$ sudo apt-get install python-influxdb
 
