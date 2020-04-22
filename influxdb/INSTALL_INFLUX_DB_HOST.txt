@@ -1,0 +1,10 @@
+﻿INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
+
+
+Outils : GRAFANA, InfluxDB
+
+## ETAPE 0 : Installer GRAFANA :
+
+$ 
+
+
