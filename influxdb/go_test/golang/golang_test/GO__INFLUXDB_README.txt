@@ -4,9 +4,47 @@ On est sur une architecture client-serveur où ici le client et le serveur est s
 
 
 
-## Prérequis 0 : Installer GRAFANA & INFLUXDB (CLIENT & SERVER) voir DOC ../
+## Prérequis 1 : Installer GRAFANA & INFLUXDB (CLIENT & SERVER) voir DOC ../
 
-Pour installer le package :
+## Prérequis 2: Installer la commande go pourconstruire le package depuis l’hote:
+
+Depuis le site officiel de go :
+
+https://golang.org/dl/
+
+Linux, macOS, and FreeBSD tarballs 
+Download the archive and extract it into /usr/local, creating a Go tree in /usr/local/go. For example: 
+
+go1.14.2.linux-amd64.tar.gz
+
+$ sudo tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
+$ export PATH=$PATH:/usr/local/go/bin
+Pour pouvoir utiliser largement la commande go depuis tout le système :
+$ gedit .bashrc
+Et ajouter à la fin du fichier la ligne suivante:
+export PATH=$PATH:/usr/local/go/bin
+
+Créer un fichier hello.go contenant :
+	package main
+
+	import "fmt"
+
+	func main() {
+	        fmt.Printf("hello, world\n")
+	}
+$ go build hello.go
+Cela génère un fichier hello executable que l’on peut lancer avec ./hello
+
+
+
+
+
+
+Pour installer le package : Se procurer le dossier golang_test/ 
+avec influxdb/
+avec measuretime/
+avec test/
+
 
 Depuis le git clone :
 
@@ -16,17 +54,70 @@ Depuis le git clone :
 			measure_time/
 			test/
 
+
+
+
+
 $ go mod init ../golang_tets
 $ go mod tidy
 
 génère un go.mod et un go.sum
 
-cp influx_db/* /usr/local/go/src
-cp measure_time/* /usr/local/go/src
+$ sudo cp -r influxdb /usr/local/go/src
+$ sudo cp -r measuretime /usr/local/go/src
 
-go build test/main.go
+$ go build test/main.go 
 
-génère main.go
+génère main
+
+On lance l’exécutable avec ./main et les options du programme :
+
+./main --Points=10 --Ip=localhost –Port=8086
+
+########## Test INFLUX DB in Go  ########################
+--- Enter the IpAdress of rows to insert : --Ip=...
+--- Enter the PortAddress of rows to insert : --Port=...
+--- Enter the number of rows to insert : --Points=...
+--- Enter the Middle of rows to insert : --Middle=...
+--- Enter the Last of rows to insert : --Last=...
+##########################################################
+
+
+Dans un autre terminal on peut lancer:
+
+$ influxdb
+
+> show databases 
+
+Permet de voir que la base de donnée test_inlfuxdb_go est bien crée.
+
+
+
+HTTP::/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Pour BR2 on fait pareil :
@@ -36,29 +127,6 @@ Pour BR2 on fait pareil :
 Dans package/influx_db_golang/
 	Création d’un Config.in
 	Création d’un influx_db_go_test.mk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
