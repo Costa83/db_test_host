@@ -82,9 +82,3 @@ Open a terminal and check if influxdb is installed :
 $ influxdb
 
 
-###############################################################################
-
-## ETAPE 3: Installer pyhton-influxdb
-
-$ sudo apt-get install python-influxdb
-
