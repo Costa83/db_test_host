@@ -11,30 +11,17 @@ var db = sublevel(levelup('./db', {
 	db: require('leveldown'),
 	valueEncoding: 'json' }))
 
-
-var bearsdb = db.sublevel('bears')
-var regionsdb = db.sublevel('regions')
-
-//regionsdb.put('northamerica', { name: 'North America' }, function (err) {
-//	bearsdb.put('steve', { type: 'grizzly', region: 'northamerica' }, function () {
-//	})
-//})
+var mesuresdb = db.sublevel('Mesures')
 
 
-var bears = []
-var stream = bearsdb.createReadStream()
-stream.on('data', function (bear) {
-  regionsdb.get(bear.value.region, function (err, region) {
-	bear.value.region = region
-	bears.push(bear.value)
-  })
-})
+mesuresdb.put('mesure1', { id: '1', type : 'distance', value : '300 km', unit : 'km' }, function (err) {})
+mesuresdb.put('mesure2', { id: '2', type : 'puissance', value : '382' , unit : 'watts' }, function (err) {})
+mesuresdb.put('mesure3', { id: '3', type : 'fc', value : '182' , unit : 'bpm'}, function (err) {})
+mesuresdb.put('mesure4', { id: '4', type : 'deniv', value : '711' , unit : 'D+'}, function (err) {})
+mesuresdb.put('mesure5', { id: '5', type : 'vitesse', value : '29,2' , unit : 'km/h' }, function (err) {})
+mesuresdb.put('mesure6', { id: '6', type : 'temperature', value : '26.2' , unit : '°C'}, function (err) {})
+mesuresdb.put('mesure7', { id: '7', type : 'cadence', value : '90' , unit : 'tpm' }, function (err) {})
 
-
-
-stream.on('close', function () {
-	console.log(bears)
-})
 
 
 

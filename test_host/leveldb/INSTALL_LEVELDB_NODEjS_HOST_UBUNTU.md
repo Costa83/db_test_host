@@ -1,4 +1,4 @@
-# Installation de LevelDB NODE JS sur PC HOST UBUNTU
+﻿# Installation de LevelDB NODE JS sur PC HOST UBUNTU
 
 Ce readme détaille les étapes d'installation.
 Tiré du Tutoriel de https://www.youtube.com/watch?v=sR7p_JbEip0.
@@ -91,4 +91,23 @@ Connect to : "http://localhost:9966"
 Inspecter l'élément, Aller dans Stockage puis IndexedDB puis http://localhost:9966/ puis IDBWrapper et ./db
 
 On peut alors directement accéder aux Key Value.
+
+
+
+Key : Measure_X
+Value : valeur
+Mesure 1 : Distance
+« 300 km»
+Mesure 2 : Puissance 
+« 300 Watts »
+Mesure 3 : Fréquence cardiaque
+« 180 bpm »
+Mesure 4 : Dénivelé positif
+« 711D+ »
+Mesure 5 : Vitesse
+« 42 Km/h»
+Mesure 7 : Température
+« 25 ° C »
+Mesure 8 : Cadence Pédalage
+« 89 tpm »
 
