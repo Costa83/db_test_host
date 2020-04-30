@@ -1,0 +1,14 @@
+﻿Why choosing Badger ?
+
+	
+Badger calls itself a distributed, fast graph database. It is an ACID-compliant, NoSQL, LSM tree-based key-value store written fully in and available only for ***Go.
+ As Badger does not focus on being run on IoT devices, it supports easy horizontal scaling, synchronous replication to prevent data loss, load balancing and using the full capacity of SSDs instead of the RAM. Central or P2P synchronization are not available.
+
+
+
+*** Getting Started
+*** Installing
+To start using Badger, install Go 1.12 or above and run go get:
+$ go get github.com/dgraph-io/badger/v2
+This will retrieve the library and install the badger command line utility into your $GOBIN path.
+
