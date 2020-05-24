@@ -1,4 +1,4 @@
-*** INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
+** INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
 
 
 On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
