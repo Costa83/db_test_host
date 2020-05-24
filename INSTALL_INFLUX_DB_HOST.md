@@ -1,12 +1,11 @@
-** INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
+# INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
 
 
-On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
+* On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
+* Outils : GRAFANA, InfluxDB
 
-Outils : GRAFANA, InfluxDB
 
 
-###############################################################################
 ## ETAPE 1: Installer GRAFANA :
 
 Grafana is by far one of the most popular open source dashboard monitoring tools of 2019. 
@@ -45,23 +44,11 @@ Open your web browser and go to http://localhost:3000/. 3000 is the default HTTP
 Tutoriel supplémentaire :
 https://www.sugarbug.fr/atelier/maquettes/centreon_graphite_graphana/grafana/
 
-
-
-
-
-
-
-
-
-
-
-###############################################################################
-
 ## ETAPE 2: Installer InfluxDB: Install InfluxDB on Ubuntu 18.04
 
-Source : https://computingforgeeks.com/install-influxdb-on-ubuntu-18-04-and-debian-9/
+* Source : https://computingforgeeks.com/install-influxdb-on-ubuntu-18-04-and-debian-9/
 
-Installation of InfluxDB on Ubuntu 18.04 is done from Influxdata repository. Once the repo is added, the package can then be installed using an apt package manager. Add the InfluxData repository to the file  /etc/apt/sources.list.d/influxdb.list : 
+* Installation of InfluxDB on Ubuntu 18.04 is done from Influxdata repository. Once the repo is added, the package can then be installed using an apt package manager. Add the InfluxData repository to the file  /etc/apt/sources.list.d/influxdb.list : 
 
 $ echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 
