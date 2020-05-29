@@ -21,6 +21,7 @@ $ make install
 $ cd ..
 $ chmod +x src/install.sh
 $ cd src/
+$ mkdir ../bin
 $ ./install.sh
 $ cd ..
 
