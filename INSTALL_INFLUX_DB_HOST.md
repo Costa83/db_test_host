@@ -66,6 +66,6 @@ $ systemctl status influxdb
 
 Open a terminal and check if influxdb is installed :
 
-$ influxdb
+$ influxd
 
 
