@@ -105,66 +105,16 @@ $ ./all.bash
 $  go version
 
 
-Unix systems
-GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.
-Go 1.13
-go env -w GOPATH=$HOME/go
-Bash
-Edit your ~/.bash_profile to add the following line:
-export GOPATH=$HOME/go
-Save and exit your editor. Then, source your ~/.bash_profile.
-source ~/.bash_profile
-
-
-$ export GOPATH=$HOME/go
-$ cd $GOPATH
-
-$ mkdir cc
-$ cd cc
-$ gedit hello.go
-
-package main
-
-import "fmt"
-
-func main() {
-
-	fmt.Println("Hello World")
-}
-
-$ go run hello.go
-$ go build
-
-$ scp cc root@192.168..0.11:~
-go 
-Ecrire le password et le user
-
-Impossible d’excuter le projet car pas un exécutable pour arm.
-
-$ rm cc
-
-$ env GOOS=linux GOARCH=arm GOARM=7 go build
-
-
-$ ./cc
-
-Ne devrait pas marcher.
-
-On refait le scp
-
-Et là cela devrait marcher.
-
-
-
-
-$ export GOPATH=$HOME/go
-$ cd $GOPATH
-
 $ mkdir test_influxdb
+
+$ git clone .....
+
+$ cp test_influxdb/* test_influxdb    (influxdb/ measuretime/ go.mod go.sum main.go test_influxdb INFLUXDB_FROM_SRC.txt)
 
 $ cd test_influxdb
 
-$ cp measure_time/ influx_db/ test/ dans $GOPATH/test_influxdb
+$ rm -rf go.* 
+$ rm -rf test_influxdb
 
 $ go mod init test_influxdb
 $ go mod tidy
@@ -173,11 +123,9 @@ $ go mod tidy
 
 $ env GOOS=linux GOARCH=arm GOARM=7 go build
 
+Génère un exécutable arm
 
-
-
-($ sudo cp -r influxdb /usr/local/go/src)
-($ sudo cp -r measuretime /usr/local/go/src)
+$ scp test_influxdb root@192.168.0.11:/usr/
 
 
 On lance l’exécutable avec ./test_influxdb et les options du programme :
@@ -193,64 +141,14 @@ On lance l’exécutable avec ./test_influxdb et les options du programme :
 ##########################################################
 
 
-Dans un autre terminal on peut lancer:
 
-$ influxdb
+### Pour L'intégration d'un package golang sur Buildroot (Pas fini -> Doc à retester=)
 
-> show databases 
-
-Permet de voir que la base de donnée test_inlfuxdb_go est bien crée.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Pour BR2 on fait pareil :
-
-	On git clone le réperoire golang_test dans le répertoire qui est appelé par BR2 (APP EXTERNES).
+On git clone le réperoire golang_test dans le répertoire qui est appelé par BR2 (APP EXTERNES).
 
 Dans package/influx_db_golang/
 	Création d’un Config.in
 	Création d’un influx_db_go_test.mk
-
-
-
-
-
-Pour développer en GO :
-
-$ mkdir myproject
-$ cd myproject
-$ go mod init 
-$ mkdir mypackage
-$ créer .go
-$ go mod tidy
-(ou $ make influxdb_go_test create_database)
-$ go build -o bin/ ./package
-$ go build -o bin/ create_database/createdatabse_influxdb.go
 
 
 #SUR BR2 :
@@ -268,40 +166,6 @@ Puis scp dans /usr/bin/ de la RPI de l’excutable.
 Trois niveau : repository = ! modules, module!= direcrory, directory = package!= src files
 
 
-Install go.1.14
-
-$ go version
-
-Go est un langage compilé qui n’a pas de dépendance une fois compilé pour fonctionner sur la cible.
-
-1- Depuis le répertoire projet :
- 
-Pour activer la compilation croisée : il faut changer une variable d’environnement :
-
-$ go tool dist list
-$ GOOS=linux
-$ GOARCH=amd64
-$ go build -o ./bin./..
-
-$ go build -o bin ./hello hello.go
- 
-
-
-
-
-$ go mod init
-$ go mod tidy
-$go mod 
-
-
-
-
-
-## ETAPE 1: Installer InfluxDB en Go:
-
-tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
-
-export PATH=$PATH:/usr/local/go/bin
 
 
 
