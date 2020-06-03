@@ -1,4 +1,4 @@
-# INSTALL INFLUXDB ON UBUNTU HOST FROM SCRATCH :
+# INSTALLER INFLUXDB SUR LE PC HOTE, DEPUIS ZERO :
 
 
 * On est sur une architecture client-serveur où ici le client et le serveur est situé sur le PC hote.
@@ -8,9 +8,11 @@
 
 ## ETAPE 1: Installer GRAFANA :
 
-Grafana is by far one of the most popular open source dashboard monitoring tools of 2019. 
-Used by SpaceX, Bloomberg and Booking.com, Grafana is definitely a must-have for engineers wanting a robust and scalable dashboard monitoring solution.
-It can be used to monitor a wide variety of different datasources : SQL databases (MySQL or PostgreSQL), NoSQL databases and time series databases (such as InfluxDB or TimescaleDB)
+Grafana est de loin l'écran de monitoring le plus populaire depuis 2019.
+Utilisé par SpaceX, Bloomberg et Booking.com.
+Il peut être utilisé pour supervisé différentes ressources :
+
+SQL (MySQL or PostgreSQL), NoSQL, time series BD (InfluxDB / TimescaleDB)
 
 Depuis le site officiel :https://grafana.com/grafana/download 
 
