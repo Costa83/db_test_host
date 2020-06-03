@@ -59,12 +59,17 @@ $ echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/a
 Update apt index and install influxdb 
 
 $ sudo apt-get install -y influxdb
+
 $ sudo apt-get install influxdb-client
+
 Start and enable the service to start on boot up : 
 
 $ sudo systemctl enable --now influxdb
+
 $ sudo systemctl is-enabled influxdb
+
 Check service status:
+
 $ systemctl status influxdb
 
 Open a terminal and check if influxdb is installed :
