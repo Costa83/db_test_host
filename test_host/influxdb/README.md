@@ -45,3 +45,30 @@ Open your web browser and go to http://localhost:3000/. 3000 is the default HTTP
 
 Tutoriel supplémentaire :
 https://www.sugarbug.fr/atelier/maquettes/centreon_graphite_graphana/grafana/
+
+
+## ETAPE 2: Installer InfluxDB: Install InfluxDB on Ubuntu 18.04
+
+* Source : https://computingforgeeks.com/install-influxdb-on-ubuntu-18-04-and-debian-9/
+
+* Installation of InfluxDB on Ubuntu 18.04 is done from Influxdata repository. Once the repo is added, the package can then be installed using an apt package manager. Add the InfluxData repository to the file  /etc/apt/sources.list.d/influxdb.list : 
+
+$ echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+
+Update apt index and install influxdb 
+
+$ sudo apt-get install -y influxdb
+$ sudo apt-get install influxdb-client
+Start and enable the service to start on boot up : 
+
+$ sudo systemctl enable --now influxdb
+$ sudo systemctl is-enabled influxdb
+Check service status:
+$ systemctl status influxdb
+
+Open a terminal and check if influxdb is installed :
+
+$ influxd
+
+
